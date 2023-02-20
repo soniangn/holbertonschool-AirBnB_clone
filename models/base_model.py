@@ -40,12 +40,13 @@ class BaseModel:
 
     def to_dict(self):
         """Return the Dictionnary """
-        dic = {}
+        """dic = {}
         dic["id"] = self.id
         dic["created_at"] = self.created_at
         dic["my_number"] = self.my_number
         dic["updated_at"] = self.updated_at
-        dic["name"] = self.name
+        dic["name"] = self.name"""
+        dic = dict(id=self.id, my_number=self.my_number, name=self.name, updated_at=self.updated_at, created_at=self.created_at)
 
         dic.update({'__class__': BaseModel.__name__})
         dic.update({'created_at': self.created_at.isoformat()})
