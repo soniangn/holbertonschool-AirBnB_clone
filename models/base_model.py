@@ -43,7 +43,7 @@ class BaseModel:
         dic = {}
         dic["id"] = self.id
         dic["created_at"] = self.created_at
-        dic["my_numbers"] = self.my_number
+        dic["my_number"] = self.my_number
         dic["updated_at"] = self.updated_at
         dic["name"] = self.name
 
