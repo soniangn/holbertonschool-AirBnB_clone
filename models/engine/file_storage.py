@@ -2,6 +2,7 @@
 """ Module with class FileStorage """
 import json
 import os.path
+from models.base_model import BaseModel
 
 
 class FileStorage:
@@ -16,7 +17,7 @@ class FileStorage:
         """ return the dictionary __objects """
         return self.__objects
 
-    @objects.setter
+    @all.setter
     def new(self, obj): 
         """ sets in __objects the obj with key <obj class name>.id """
         self.__objects = '{}.{}'.format(self.__class__.__name__, self.id)
