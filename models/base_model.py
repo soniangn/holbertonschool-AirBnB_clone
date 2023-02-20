@@ -13,7 +13,7 @@ class BaseModel:
         self.my_number = my_number
 
     def __str__(self):
-        return "[{}] ({}) {}".format(__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(BaseModel.__name__, self.id, self.__dict__)
 
     def save(self):
         self.updated_at = datetime.now()
