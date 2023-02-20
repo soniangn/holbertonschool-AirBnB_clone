@@ -7,24 +7,15 @@ from datetime import datetime
 
 
 class BaseModel:
+    """ defines all common attributes/methods for other classes """
     def __init__(self, *args, **kwargs):
-        """Assigns an argument to each attribute"""
-        if len(kwargs) != 0:
-            for key, value in kwargs.items():
-                format = "%Y-%m-%dT%H:%M:%S.%f"
-                if key == 'id':
-                    self.id = value
-                if key == 'created_at':
-                    self.created_at = datetime.strptime(value, format)
-                if key == 'my_number':
-                    self.my_number = value
-                if key == 'updated_at':
-                    self.updated_at = datetime.strptime(value, format)
-                if key == 'name':
-                    self.name = value
-                if key != "__class__":
-                    setattr(self, key, value)
-        else:
+        if kwargs: 
+            self.updated_at = datetime.strptime(kwargs.get('updated_at'), '%Y-%m-%dT%H:%M:%S.%f')
+            self.name = kwargs.get('name')
+            self.my_number = kwargs.get('my_number')
+            self.id = kwargs.get('id')
+            self.created_at = kwargs.get('created_at')
+        else: 
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
