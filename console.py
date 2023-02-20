@@ -4,10 +4,11 @@ import cmd
 
 
 class HBNBCommand(cmd.Cmd):
+    """contains the entry point of the command interprete"""
     prompt = '(hbnb) '
 
     def do_EOF(self, line):
-        "command to exit the program""
+        "command to exit the program"
         return True
 
     def emptyline(self):
