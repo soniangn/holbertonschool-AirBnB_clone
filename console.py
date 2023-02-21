@@ -2,6 +2,7 @@
 """The console"""
 import cmd
 from models.base_model import BaseModel
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interprete"""
@@ -30,6 +31,25 @@ class HBNBCommand(cmd.Cmd):
                 new_inst.save()
                 print(new_inst.id)           
         
+    def do_destroy(self, line):
+        arg = line.split(" ")
+        print(arg)
+        if arg[0] == "":
+            print("** class name missing **")
+        else:
+            if arg[0] != "BaseModel":
+                print("** class doesn't exist **")
+            elif len(arg) == 1:
+                print("** instance id missing **")  
+            else:
+                all_objs = storage.all()
+                obj = arg[0] + "." + arg[1]
+                if obj in all_objs.keys():
+                    del all_objs[obj]
+                    storage.save()
+                else:
+                    print(obj)
+                    print("** no instance found **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
