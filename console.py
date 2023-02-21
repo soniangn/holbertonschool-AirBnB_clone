@@ -53,6 +53,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         arg = line.split(" ")
+        all_objs = storage.all()
+        obj = arg[0] + "." + arg[1]
+
         if arg[0] == "":
             print("** class name missing **")
         else:
@@ -64,9 +67,9 @@ class HBNBCommand(cmd.Cmd):
                 print("** attribute name missing **")
             elif len(arg) == 3:
                 print("** value missing **")
+            elif obj not in all_objs:
+                print("** instance id missing **")
             else:
-                all_objs = storage.all()
-                obj = arg[0] + "." + arg[1]
                 all_objs[obj].__dict__[arg[2]] = eval(arg[3])
                 storage.save()
 
