@@ -33,9 +33,9 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """Return the Dictionnary """
-        dic = (self.__dict__).copy
-        dic.update({'__class__': BaseModel.__name__})
-        dic.update({'created_at': self.created_at.isoformat()})
-        dic.update({'updated_at': self.updated_at.isoformat()})
+        """Return the Dictionary """
+        dic = (self.__dict__).copy()
+        dic['__class__'] = BaseModel.__name__
+        dic['created_at'] = self.created_at.isoformat()
+        dic['updated_at'] = self.updated_at.isoformat()
         return dic
