@@ -23,16 +23,10 @@ class FileStorage:
     def save(self):
         """ serializes __objects to the JSON file """
         dict = {}
-        for i, v in self.__objects.items():
-            dict[i] = v.to_dict()
-
+        for key, value in self.__objects.items():
+            dict[key] = value.to_dict()
         with open(self.__file_path,"w", encoding="utf-8") as f:
             json.dump(dict, f)
-        """new_dict = {}
-        for i in self.__objects:
-            new_dict[i] = self.__objects[i].to_dict()
-        with open(FileStorage.__file_path, 'w') as f:
-            f.write(json.dumps(new_dict, default=str))"""
 
     def reload(self):
         """ deserializes the JSON file to __objects """
@@ -45,9 +39,3 @@ class FileStorage:
                     print(reload2)
         except FileNotFoundError:
             pass
-        """try:
-            with open(FileStorage.__file_path, 'r') as f:
-                for i, j in json.load(f).items():
-                    self.__objects[i] = BaseModel(**j)
-        except FileNotFoundError:
-            pass"""
