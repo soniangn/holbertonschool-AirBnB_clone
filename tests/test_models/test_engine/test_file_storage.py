@@ -21,16 +21,13 @@ class FileStorage(unittest.TestCase):
     """def test_all(self):
         FileStorage.all"""
 
-
     """Test of new()"""
     """def test_new(self):
         FileStorage.new()"""
 
-
     """Test of save()"""
     """def test_safe(self):
         FileStorage.safe()"""
-
 
     """Test of reload()"""
     """def test_reload(self):
