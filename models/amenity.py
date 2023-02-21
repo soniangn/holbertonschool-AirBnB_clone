@@ -1,2 +1,7 @@
 #!/usr/bin/python3
-"""Review"""
+"""User"""
+
+from models.base_model import BaseModel
+
+class Amenity(BaseModel):
+    name= ""
