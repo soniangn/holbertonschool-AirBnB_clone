@@ -19,14 +19,14 @@ class FileStorage(unittest.TestCase):
         self.user.email = "vt@mail.com"
         self.storage = FileStorage()
 
-    @classmethod
+   """ @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
         try:
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     """Test of __file_path:"""
     def test_file_path(self):
         storage = FileStorage()
