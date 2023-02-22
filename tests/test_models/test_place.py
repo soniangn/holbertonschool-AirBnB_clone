@@ -22,7 +22,7 @@ class TestPlace(unittest.TestCase):
         self.place.latitude = 43.600000
         self.place.longitude = 1.433333
         self.place.amenity_ids = "amenities"
-
+"""
     @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
@@ -30,7 +30,7 @@ class TestPlace(unittest.TestCase):
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     def test_place(self):
         """ checks place's attribute """
         self.assertEqual(self.place.city_id, "31000")
