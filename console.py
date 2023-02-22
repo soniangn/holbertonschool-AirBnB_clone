@@ -2,6 +2,7 @@
 """The console"""
 import cmd
 import json
+from models import storage
 from models.engine.file_storage import FileStorage
 from models.__init__ import storage
 from models.amenity import Amenity
