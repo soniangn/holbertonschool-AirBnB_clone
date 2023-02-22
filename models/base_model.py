@@ -33,7 +33,7 @@ class BaseModel():
         """Save the documentation"""
         self.updated_at = datetime.now()
         models.storage.save()
-        """models.storage.new(self)"""
+        models.storage.new(self)
 
 
     def to_dict(self):
