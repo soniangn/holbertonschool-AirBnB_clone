@@ -46,6 +46,6 @@ class FileStorage:
             with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
                 for key, value in json.load(f).items():
                     splitted = str(key).split('.')
-                    self.__objects[key] = eval(classes[splitted[0]])(**value)
+                    self.__objects[key] = classes[splitted[0]](**value)
         except FileNotFoundError:
             pass
