@@ -18,6 +18,11 @@ class FileStorage:
     __file_path = 'file.json'
     __objects = {}
 
+    classes = {'BaseModel': BaseModel,
+                   'User': User, 'Place': Place,
+                   'State': State, 'City': City,
+                   'Amenity': Amenity, 'Review': Review}
+
     def all(self):
         """ return the dictionary __objects """
         return FileStorage.__objects
@@ -32,20 +37,15 @@ class FileStorage:
         dict = {}
         for key, value in self.__objects.items():
             dict[key] = value.to_dict()
-        with open(FileStorage.__file_path,"w", encoding="utf-8") as f:
-            f.write(json.dump(dict, f))
+        with open(self.__file_path, "w", encoding="utf-8") as f:
+            json.dump(dict, f)
 
     def reload(self):
         """ deserializes the JSON file to __objects """
-
-        classes = {'BaseModel': BaseModel,
-                   'User': User, 'Place': Place,
-                   'State': State, 'City': City,
-                   'Amenity': Amenity, 'Review': Review}
         try:
-            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-                for key, value in json.load(f).items():
-                    splitted = str(key).split('.')
-                    self.__objects[key] = classes[splitted[0]](**value)
+            with open(self.__file_path, "r", encoding="utf-8") as f:
+                obj = json.load(f).items()
+                for key, value in obj:
+                        self.__objects[key] = self.classes[value['__class__']](**value)
         except FileNotFoundError:
             pass
