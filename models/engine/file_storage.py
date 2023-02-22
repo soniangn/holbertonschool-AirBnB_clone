@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import os.path
 
 from models.base_model import BaseModel
 from models.user import User
@@ -24,7 +25,7 @@ class FileStorage:
 
     def all(self):
         """ return the dictionary __objects """
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """ sets in __objects the obj with key <obj class name>.id """
