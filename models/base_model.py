@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Model from BaseModel"""
+""" Module for BaseModel """
 import uuid
 from datetime import datetime
 import models
@@ -30,14 +30,16 @@ class BaseModel():
         return print_str.format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
-        """Save the documentation"""
+        """ updates the current datetime and saves it"""
         self.updated_at = datetime.now()
         models.storage.save()
-        models.storage.new(self)
-
 
     def to_dict(self):
-        """Return the Dictionary """
+        """ 
+        Returns a Dictionary with __dict__ method, adds
+        a __class__ attribute value, converts created_at and
+        updated_at datetimes
+        """
         dic = (self.__dict__).copy()
         dic['__class__'] = type(self).__name__
         dic['created_at'] = self.created_at.isoformat()

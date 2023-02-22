@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The console"""
+""" Module for the Hbnb console """
 import cmd
 import json
 from models import storage
@@ -15,7 +15,7 @@ from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
-    """contains the entry point of the command interprete"""
+    """contains the entry point of the command interpreter """
     prompt = '(hbnb) '
 
     classes = {"Amenity": Amenity, 
@@ -27,18 +27,19 @@ class HBNBCommand(cmd.Cmd):
                "User": User}
 
     def do_EOF(self, line):
-        """command to exit the program"""
+        """ command to exit the program via CTRL+d """
         return True
 
     def emptyline(self):
+        """ overrides the default behavior """
         pass
 
     def do_quit(self, line):
-        """Quit command to exit the program"""
+        """ command to exit the program """
         return True
 
     def do_create(self, line):
-        """Create a new instances """
+        """ command that creates a new instance """
         arg = line.split(" ")
         if arg[0] == "":
             print("** class name missing **")
@@ -52,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
                 print(new_inst.id)
 
     def do_show(self, line):
-        """Print instances"""
+        """ Print instances """
         arg = line.split(" ")
         if arg[0] == "":
             print('** class name missing **')
@@ -71,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
                     print('** no instance found **')
 
     def do_destroy(self, line):
-        """Deletes an instance"""
+        """ Deletes an instance """
         arg = line.split(" ")
         print(arg)
         if arg[0] == "":
@@ -109,6 +110,7 @@ class HBNBCommand(cmd.Cmd):
                 print('** class doesn\'t exist **')
 
     def do_update(self, line):
+        """ command to add/update attributes """
         arg = line.split(" ")
         all_objs = storage.all()
 
