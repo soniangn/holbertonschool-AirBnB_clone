@@ -59,7 +59,7 @@ $
     
 `hbnb` handles the following commands:
     
- | Opcode | Description                                     |
+ | Commands | Description                                     |
 |----------|-----------------------------------------------|
 |  create     | 	Creates a new instance, saves it to the JSON file and prints the id   |
 |  show    | Prints the string representation of an instance based on the class name and id  |
