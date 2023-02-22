@@ -122,6 +122,5 @@ class HBNBCommand(cmd.Cmd):
                     all_objs[obj].__dict__[arg[2]] = eval(arg[3])
                     storage.save()
 
-
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
