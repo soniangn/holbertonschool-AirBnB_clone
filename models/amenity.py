@@ -7,4 +7,4 @@ from models.base_model import BaseModel
 class Amenity(BaseModel):
     """ defines attributes for Amenity """
     """ subclass of BaseModel """
-    name= ""
+    name = ""

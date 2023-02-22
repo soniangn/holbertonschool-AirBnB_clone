@@ -18,12 +18,12 @@ class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interpreter """
     prompt = '(hbnb) '
 
-    classes = {"Amenity": Amenity, 
-               "BaseModel": BaseModel, 
+    classes = {"Amenity": Amenity,
+               "BaseModel": BaseModel,
                "City": City,
-               "Place": Place, 
-               "Review": Review, 
-               "State": State, 
+               "Place": Place,
+               "Review": Review,
+               "State": State,
                "User": User}
 
     def do_EOF(self, line):
