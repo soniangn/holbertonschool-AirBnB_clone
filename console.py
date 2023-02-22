@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 new_inst = HBNBCommand.classes[arg[0]]()
                 new_inst.save()
-                storage.save()
+                FileStorage.save()
                 print(new_inst.id)
 
     def do_show(self, line):
@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
                 obj = arg[0] + "." + arg[1]
                 if obj in all_objs.keys():
                     del all_objs[obj]
-                    storage.save()
+                    FileStorage.save()
                 else:
                     print("** no instance found **")
 
