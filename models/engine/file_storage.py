@@ -2,6 +2,14 @@
 """ Module with class FileStorage """
 import json
 from models.base_model import BaseModel
+import models
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 
 class FileStorage:
@@ -36,3 +44,4 @@ class FileStorage:
                     self.__objects[key] = eval(value['__class__'])(**value)
         except FileNotFoundError:
             pass
+
