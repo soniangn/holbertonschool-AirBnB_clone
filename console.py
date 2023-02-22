@@ -4,6 +4,12 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 
 class HBNBCommand(cmd.Cmd):
@@ -108,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** attribute name missing **")
             elif len(arg) == 3:
                 print("** value missing **")
-            
+
             obj = arg[0] + "." + arg[1]
             if obj not in all_objs:
                 print("** no instance found **")
