@@ -12,7 +12,7 @@ class TestCity(unittest.TestCase):
         self.city = City()
         self.city.state_id = "31000"
         self.city.name = "Toulouse"
-
+"""
     @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
@@ -20,7 +20,7 @@ class TestCity(unittest.TestCase):
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     def test_city(self):
         """ checks city's attributes """
         self.assertEqual(self.city.state_id, "31000")

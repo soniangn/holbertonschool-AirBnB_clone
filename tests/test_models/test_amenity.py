@@ -11,7 +11,7 @@ class TestAmenity(unittest.TestCase):
         """ creates an instance of Amenity """
         self.amenity = Amenity()
         self.amenity.name = "air-conditioning"
-
+"""
     @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
@@ -19,7 +19,7 @@ class TestAmenity(unittest.TestCase):
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     def test_city(self):
         """ checks city's attributes """
         self.assertEqual(self.amenity.name, "air-conditioning")

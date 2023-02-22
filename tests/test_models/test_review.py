@@ -13,7 +13,7 @@ class TestReview(unittest.TestCase):
         self.review.place_id = "31000"
         self.review.user_id = "Ch@arlie5433"
         self.review.text = "Great experience"
-
+"""
     @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
@@ -21,7 +21,7 @@ class TestReview(unittest.TestCase):
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     def test_review(self):
         """ checks review's attributes """
         self.assertEqual(self.review.place_id, "31000")

@@ -12,7 +12,7 @@ class TestState(unittest.TestCase):
         """ creates an instance of State with attributes """
         self.state = State()
         self.state.name = "Haute-Garonne"
-
+"""
     @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
@@ -20,7 +20,7 @@ class TestState(unittest.TestCase):
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     def test_user(self):
         """ checks state's attribute """
         self.assertEqual(self.state.name, "Haute-Garonne")

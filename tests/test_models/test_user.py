@@ -15,7 +15,7 @@ class TestUser(unittest.TestCase):
         self.user.last_name = "Tessier"
         self.user.password = "sTr@n_G"
         self.user.email = "vt@mail.com"
-
+"""
     @classmethod
     def tearDownClass(cls):
         """ delete json file at the end of tests """
@@ -23,7 +23,7 @@ class TestUser(unittest.TestCase):
             os.remove("file.json")
         except Exception:
             pass
-
+"""
     def test_user(self):
         """ checks user's attributes """
         self.assertEqual(self.user.first_name, "Vanessa")
