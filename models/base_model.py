@@ -13,11 +13,13 @@ class BaseModel():
     """ defines all common attributes/methods for other classes """
     def __init__(self, *args, **kwargs):
         if kwargs:
-            self.updated_at = datetime.strptime(kwargs.get('updated_at'), '%Y-%m-%dT%H:%M:%S.%f')
+            self.updated_at = datetime.strptime(kwargs.get('updated_at'),
+                                                '%Y-%m-%dT%H:%M:%S.%f')
             self.name = kwargs.get('name')
             self.my_number = kwargs.get('my_number')
             self.id = kwargs.get('id')
-            self.created_at = datetime.strptime(kwargs.get('created_at'), '%Y-%m-%dT%H:%M:%S.%f')
+            self.created_at = datetime.strptime(kwargs.get('created_at'),
+                                                '%Y-%m-%dT%H:%M:%S.%f')
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -35,7 +37,7 @@ class BaseModel():
         models.storage.save()
 
     def to_dict(self):
-        """ 
+        """
         Returns a Dictionary with __dict__ method, adds
         a __class__ attribute value, converts created_at and
         updated_at datetimes
