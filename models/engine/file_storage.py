@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import json
+import os.path
 
 from models.base_model import BaseModel
 from models.user import User
@@ -36,6 +37,7 @@ class FileStorage:
 
     def reload(self):
         """ deserializes the JSON file to __objects """
+
         classes = {'BaseModel': BaseModel,
                    'User': User, 'Place': Place,
                    'State': State, 'City': City,

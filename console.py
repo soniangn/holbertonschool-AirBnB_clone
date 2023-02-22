@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """The console"""
 import cmd
+import json
 import models
+from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
-from models import storage
+from models.__init__ import storage
 from models.user import User
 from models.state import State
 from models.city import City
@@ -16,6 +18,7 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interprete"""
     prompt = '(hbnb) '
+    ListClass = ["BaseModel", "User", "City", "Place", "Review", "State", "Amenity"]
 
 
     def do_EOF(self, line):
@@ -35,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != "BaseModel":
+            if arg[0] != self.ListClass:
                 print("** class doesn't exist **")
             else:
                 new_inst = BaseModel()
@@ -50,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(arg) == 1:
             print('** instance id missing **')
         else:
-            if arg[0] == "BaseModel":
+            if arg[0] == self.ListClass:
                 try:
                     storage_all = storage.all()
                     obj = arg[0] + "." + arg[1]
@@ -68,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != "BaseModel":
+            if arg[0] != self.ListClass:
                 print("** class doesn\'t exist **")
             elif len(arg) == 1:
                 print("** instance id missing **")
@@ -107,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != "BaseModel":
+            if arg[0] != self.ListClass:
                 print("** class doesn't exist **")
             elif len(arg) == 1:
                 print("** instance id missing **")
