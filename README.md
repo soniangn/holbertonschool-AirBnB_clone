@@ -1,6 +1,6 @@
 <img width="450" src="https://user-images.githubusercontent.com/113889290/220651819-3bb7044c-f49b-4cd6-b7e3-fb2b6ecde871.png">
 
-<h2>Introduction to AirBnb clone</h2>
+<h2><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=44&pause=1000&color=CF0000&center=true&vCenter=true&width=735&height=45&lines=Introduction+to+AirBnb+clone" alt="Typing SVG" /></a></h2>
 ▪ The objective of this project is to implement a simple copy of the AirBnB website.   ▪ This project will be divided, each focused on different aspects and technologies. 
 ▪ This is the first part of the project which consists of building the console.  
 
