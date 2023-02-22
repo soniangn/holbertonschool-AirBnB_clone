@@ -19,9 +19,12 @@ class FileStorage:
     __objects = {}
 
     classes = {'BaseModel': BaseModel,
-                   'User': User, 'Place': Place,
-                   'State': State, 'City': City,
-                   'Amenity': Amenity, 'Review': Review}
+               'User': User, 
+               'Place': Place,
+               'State': State,
+               'City': City,
+               'Amenity': Amenity, 
+               'Review': Review}
 
     def all(self):
         """ return the dictionary __objects """
@@ -43,9 +46,8 @@ class FileStorage:
     def reload(self):
         """ deserializes the JSON file to __objects """
         try:
-            with open(self.__file_path, "r", encoding="utf-8") as f:
-                obj = json.load(f).items()
-                for key, value in obj:
-                        self.__objects[key] = self.classes[value['__class__']](**value)
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
+                for key, value in json.load(f).items():
+                    self.__objects[key] = eval(value["__class__"])(**value)
         except FileNotFoundError:
             pass
