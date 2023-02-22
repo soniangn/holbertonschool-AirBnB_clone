@@ -11,7 +11,7 @@ store and persist objects to a file (JSON file)
 The first piece is to manipulate a powerful storage system.  This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”. This means: from your console code (the command interpreter itself).
 The console will be a tool to validate this storage engine</p>
 
-<h2> Install the console :</h2>
+<h2> Usage </h2>
 
 <h3>Git clone the repository</h3>  
 
@@ -25,8 +25,10 @@ $ git clone https://github.com/TessierV/holbertonschool-AirBnB_clone.git
 $ ./console.py
 ```
 
-<details><summary>click for read more | Interactive Mode & Non-Interactive Mode </summary>
+<details><summary>click to read more | Interactive & Non-interactive Mode </summary>
 
+<h2> Features </h2>
+    
 <h3>Interactive Mode</h3>
 
 ```bash
@@ -53,6 +55,19 @@ $
 ```
 </details>
 
+<h2> Features </h2>  
+    
+`hbnb` executes the following commands:
+    
+ | Opcode | Description                                     |
+|----------|-----------------------------------------------|
+|  create     | 	Creates a new instance, saves it to the JSON file and prints the id   |
+|  show    | Prints the string representation of an instance based on the class name and id  |
+|  destroy    |    Deletes an instance based on the class name and id, saves it to the JSON file  |
+|   all  |   Prints all string representation of all instances based or not on the class name   |
+|    update    |   Updates an instance based on the class name and id by adding or updating attribute, saves it to the JSON file    |
+
+    
 <h2> Examples :</h2>
 
 <h3>Create a Model</h3>
@@ -72,23 +87,23 @@ d0ef8146-4664-4de5-8e89-096d667b728e
 
 ```
 
-<h2> Flowcharts :</h2>
+<h2> Flowchart :</h2>
 
 <img width="600" src="https://user-images.githubusercontent.com/113889290/220693285-b293179e-b126-4204-a55d-5ebc67c896f3.png">
 
 
-<h2> Files & Directories descriptions :</h2>
+<h2> Files & Directories Description :</h2>
 
 |  AirBnB_clone Repository            | Name                         | Description           |
 |  --------------|---------------|------------------------------------------ |
 |  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) | console.py | Contains the entry point of the command interpreter | 
 |  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) | AUTHORS | Contains the list of the creators and their e-mail | 
-|  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) | README.md | Contains all the informations of the project | 
+|  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) | README.md | Contains all the project informations | 
 |  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) |  [models/](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/models) | Directory contains all the models files of the project |
 |  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) | [models/engine/](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/models/engine) | Serialization - Deserialization directory
 |  [holbertonschool-AirBnB_clone](https://github.com/TessierV/holbertonschool-AirBnB_clone) | [tests/](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests) | Directory contains all the tests files of the project | 
 
-<details><summary>click for read more</summary>
+<details><summary>click to read more</summary>
 
 |  Models Repository            | Name                         | Description           |
 |  --------------|---------------|------------------------------------------ |
@@ -114,7 +129,7 @@ d0ef8146-4664-4de5-8e89-096d667b728e
 |[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)|  | 
 </details>
 <br><br>
-<h3>Autors :
+<h3>Authors :
     <a href="https://www.linkedin.com/in/nguyensonia/">
        <img alt="Anurag Hazra | CodeSandbox" height="20px" src="https://img.shields.io/badge/NguyenSonia-4A6552?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
