@@ -2,6 +2,14 @@
 """ Module with class FileStorage """
 import json
 from models.base_model import BaseModel
+import models
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 
 class FileStorage:
@@ -32,10 +40,8 @@ class FileStorage:
         """ deserializes the JSON file to __objects """
         try:
             with open(self.__file_path, "r", encoding="utf-8") as f:
-                reload = json.load(f)
-                for key, value in reload.items():
-                    reload2 = eval(value['__class__'])(**value)
-                    self.__objects[key] = reload2
-                    print(reload2)
+                for key, value in json.load(f).items():
+                    self.__objects[key] = eval(value['__class__'])(**value)
         except FileNotFoundError:
             pass
+

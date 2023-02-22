@@ -1,2 +1,7 @@
 #!/usr/bin/python3
-"""Review"""
+"""State"""
+
+from models.base_model import BaseModel
+
+class State(BaseModel):
+    name= ""
