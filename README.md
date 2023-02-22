@@ -57,7 +57,7 @@ $
 
 <h2> Features </h2>  
     
-`hbnb` executes the following commands:
+`hbnb` handles the following commands:
     
  | Opcode | Description                                     |
 |----------|-----------------------------------------------|
@@ -66,6 +66,9 @@ $
 |  destroy    |    Deletes an instance based on the class name and id, saves it to the JSON file  |
 |   all  |   Prints all string representation of all instances based or not on the class name   |
 |    update    |   Updates an instance based on the class name and id by adding or updating attribute, saves it to the JSON file    |
+|    EOF (ctrl+d)   |   Exits the console    |
+|    quit  |   Exits the console    |
+|    <emptyline>   |   Overrides the default behaviour and does nothing    |
 
     
 <h2> Examples :</h2>
