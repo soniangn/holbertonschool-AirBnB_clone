@@ -1,31 +1,20 @@
 #!/usr/bin/python3
 """The console"""
 import cmd
-import json
-from models.engine.file_storage import FileStorage
-from models.__init__ import storage
-from models.amenity import Amenity
 from models.base_model import BaseModel
+from models import storage
+from models.user import User
+from models.state import State
 from models.city import City
+from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
-from models.state import State
-from models.user import User
+
 
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interprete"""
     prompt = '(hbnb) '
-
-    Dict = [
-        "BaseModel",
-        "User",
-        "City",
-        "Place",
-        "Review",
-        "State",
-        "Amenity"
-        ]
 
 
     def do_EOF(self, line):
@@ -45,15 +34,12 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != self.Dict:
-                print("** class doesn\'t exist **")
+            if arg[0] != "BaseModel":
+                print("** class doesn't exist **")
             else:
                 new_inst = BaseModel()
                 new_inst.save()
                 print(new_inst.id)
-
-
-
 
     def do_show(self, line):
         """Print instances"""
@@ -63,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(arg) == 1:
             print('** instance id missing **')
         else:
-            if arg[0] == self.Dict:
+            if arg[0] == "BaseModel":
                 try:
                     storage_all = storage.all()
                     obj = arg[0] + "." + arg[1]
@@ -81,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != self.Dict:
+            if arg[0] != "BaseModel":
                 print("** class doesn\'t exist **")
             elif len(arg) == 1:
                 print("** instance id missing **")
@@ -92,6 +78,7 @@ class HBNBCommand(cmd.Cmd):
                     del all_objs[obj]
                     storage.save()
                 else:
+                    print(obj)
                     print("** no instance found **")
 
     def do_all(self, line):
@@ -119,8 +106,8 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg in self.ListClass:
-                print("** class doesn\'t exist **")
+            if arg[0] != "BaseModel":
+                print("** class doesn't exist **")
             elif len(arg) == 1:
                 print("** instance id missing **")
             elif len(arg) == 2:
@@ -134,6 +121,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     all_objs[obj].__dict__[arg[2]] = eval(arg[3])
                     storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

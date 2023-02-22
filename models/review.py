@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""User"""
-
+"""Review"""
+import models
 from models.base_model import BaseModel
 
 class Review(BaseModel):
