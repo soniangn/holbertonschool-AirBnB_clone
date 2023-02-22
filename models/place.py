@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""Place"""
+""" Module for Place"""
 import models
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
+    """ defines attributes for Place """
+    """ subclass of BaseModel """
     city_id= ""
     user_id= ""
     name= ""
