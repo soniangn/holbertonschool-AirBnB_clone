@@ -2,7 +2,10 @@
 """ Module with class FileStorage """
 import json
 from models.base_model import BaseModel
-
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
 
 class FileStorage:
     """ serializes instances to a JSON file """
@@ -34,5 +37,6 @@ class FileStorage:
             with open(self.__file_path, "r", encoding="utf-8") as f:
                 for key, value in json.load(f).items():
                     self.__objects[key] = eval(value['__class__'])(**value)
+                    """self.new(value)"""
         except FileNotFoundError:
             pass

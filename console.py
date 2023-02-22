@@ -4,11 +4,27 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interprete"""
     prompt = '(hbnb) '
+
+    Dict = [
+        "BaseModel",
+        "User",
+        "City",
+        "Place",
+        "Review",
+        "State",
+        "Amenity"
+        ]
 
 
     def do_EOF(self, line):
@@ -28,8 +44,8 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != "BaseModel":
-                print("** class doesn't exist **")
+            if arg[0] != self.Dict:
+                print("** class doesn\'t exist **")
             else:
                 new_inst = BaseModel()
                 new_inst.save()
@@ -43,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(arg) == 1:
             print('** instance id missing **')
         else:
-            if arg[0] == "BaseModel":
+            if arg[0] == self.Dict:
                 try:
                     storage_all = storage.all()
                     obj = arg[0] + "." + arg[1]
@@ -61,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
         if arg[0] == "":
             print("** class name missing **")
         else:
-            if arg[0] != "BaseModel":
+            if arg[0] != self.Dict:
                 print("** class doesn\'t exist **")
             elif len(arg) == 1:
                 print("** instance id missing **")
