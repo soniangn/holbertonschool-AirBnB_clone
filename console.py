@@ -3,10 +3,19 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
+
 
 class HBNBCommand(cmd.Cmd):
     """contains the entry point of the command interprete"""
     prompt = '(hbnb) '
+
 
     def do_EOF(self, line):
         """command to exit the program"""
