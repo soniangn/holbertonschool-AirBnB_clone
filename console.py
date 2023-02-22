@@ -105,13 +105,13 @@ class HBNBCommand(cmd.Cmd):
                 print("** attribute name missing **")
             elif len(arg) == 3:
                 print("** value missing **")
-            
-            obj = arg[0] + "." + arg[1]
-            if obj not in all_objs:
-                print("** no instance found **")
             else:
-                all_objs[obj].__dict__[arg[2]] = eval(arg[3])
-                storage.save()
+                obj = arg[0] + "." + arg[1]
+                if obj not in all_objs:
+                    print("** no instance found **")
+                else:
+                    all_objs[obj].__dict__[arg[2]] = eval(arg[3])
+                    storage.save()
 
 
 if __name__ == '__main__':
