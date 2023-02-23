@@ -27,12 +27,8 @@ class TestBaseModel(unittest.TestCase):
 
     """Test of save"""
     def test_safe(self):
-        base = BaseModel()
-        try:
-            os.remove("file.json")
-        except Exception:
-            pass
-        base.save()
+        model = BaseModel()
+        self.model.save()
 
 
 
