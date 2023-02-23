@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """ File Storage Unit tests """
 
-import unittest
-from models.base_model import BaseModel
-from models.user import User
 from models.engine.file_storage import FileStorage
 from models import storage
-import os
+from models.base_model import BaseModel
+import models
+import unittest
 import json
 
 
