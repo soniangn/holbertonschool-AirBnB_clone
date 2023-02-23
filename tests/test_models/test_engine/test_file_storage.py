@@ -2,10 +2,9 @@
 from models.engine.file_storage import FileStorage
 from models import storage
 from models.base_model import BaseModel
-import models
+import pep8
 import unittest
 import json
-import pep8
 
 
 class TestFileStorage(unittest.TestCase):
