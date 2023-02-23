@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 new_inst = HBNBCommand.classes[arg[0]]()
                 new_inst.save()
-                FileStorage.save()
+                storage.save()
                 print(new_inst.id)
 
     def do_show(self, line):
