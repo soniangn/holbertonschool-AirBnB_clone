@@ -8,6 +8,21 @@ import os
 
 class TestPlace(unittest.TestCase):
     """ test Place """
+    def setUp(self):
+        """ creates an instance of Place with attributes """
+        self.place = Place()
+        self.place.city_id = "31000"
+        self.place.user_id = "Charlie_6542"
+        self.place.name = "chalet"
+        self.place.description = "7 pièces"
+        self.place.number_rooms = 4
+        self.place.number_bathrooms = 2
+        self.place.max_guest = 10
+        self.place.price_by_night = 450
+        self.place.latitude = 43.600000
+        self.place.longitude = 1.433333
+        self.place.amenity_ids = "amenities"
+
     def test_place(self):
         """ checks place's attribute """
         self.assertEqual(self.place.city_id, "31000")
