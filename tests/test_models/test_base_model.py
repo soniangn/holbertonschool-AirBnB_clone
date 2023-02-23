@@ -34,7 +34,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test__str__(self):
         """ test of __str__ """
-        self.assertEqual(str, type(BaseModel.__str__))
+        self.assertEqual(str, f"[{BaseModel.__class__.__name__}]({BaseModel.id}){BaseModel.__dict__}")
 
     def test_save(self):
         """ Test of save """
