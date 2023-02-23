@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Test class base"""
-import os
 import unittest
 from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
+from datetime import datetime
+import os
 
 
-class testbase(unittest.TestCase):
+class TestBaseModel(unittest.TestCase):
     """Class test base"""
 
     """Tesst of Base"""
@@ -24,6 +24,7 @@ class testbase(unittest.TestCase):
     """All test validate from Json string"""
     def test_exist(self):
         self.assertTrue(os.path.exists("file.json"))
+
 
 
 if __name__ == '__main__':
