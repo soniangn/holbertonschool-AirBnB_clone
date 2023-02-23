@@ -1,35 +1,35 @@
 #!/usr/bin/python3
 """Test class base"""
-"""
 import unittest
-from models.base_model import Base
+from models.base_model import BaseModel
+from datetime import datetime
+import os
 
-"""
-"""class testbase(unittest.TestCase):"""
+
+class TestBaseModel(unittest.TestCase):
     """Class test base"""
 
-    """Tesst of Base"""
     """Test of Base() for assigning automatically an ID exists"""
-    """def test_id(self):
-        base = Base()
+    def test_id(self):
+        base = BaseModel()
         self.assertEqual(base.id, 1)
-"""
+
     """Test of Base(89) saving the ID passed exists"""
-    """def test_id_pass(self):
-        base = Base(89)
-        self.assertEqual(base.id, 89)
-"""
-    """Test of Base.to_json"""
-    """"All test validate from base.to_json"""
-    """def test_none(self):
-        base = Base()
-        self.assertEqual(base.to_json_string([]), '[]')
-"""
+    def test_id_pass(self):
+        my_number = BaseModel(89)
+        self.assertEqual(my_number, 89)
+
     """Base.from_json_string"""
     """All test validate from Json string"""
-    """def test_from_none(self):
-        self.assertEqual(Base.from_json_string('[]'), [])
+    def test_exist(self):
+        self.assertTrue(os.path.exists("file.json"))
+
+    """Test of save"""
+    def save(self):
+        base = BaseModel()
+        base.save()
+        base.storage.new(self)
 
 
 if __name__ == '__main__':
-    unittest.main()"""
+    unittest.main()
