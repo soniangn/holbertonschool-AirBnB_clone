@@ -9,20 +9,10 @@ import os
 
 class TestState(unittest.TestCase):
     """ test State """
-    def setUp(self):
-        """ creates an instance of State with attributes """
-        State.name = "Haute-Garonne"
-
-    @classmethod
-    def tearDownClass(cls):
-        """ delete json file at the end of tests """
-        try:
-            os.remove("file.json")
-        except Exception:
-            pass
 
     def test_state(self):
         """ checks state's attribute """
+        State.name = "Haute-Garonne"
         self.assertEqual(State.name, "Haute-Garonne")
 
     def test_subclass(self):
