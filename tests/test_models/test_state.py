@@ -10,13 +10,9 @@ import os
 class TestState(unittest.TestCase):
     """ test State """
 
-    def test_state(self):
-        """ checks state's attribute """
-        self.assertEqual(True, issubclass(State, BaseModel))
-        self.assertEqual(State.number_rooms, 0)
-        self.assertEqual(State.number_bathrooms, 0)
-        self.assertEqual(State.max_guest, 0)
 
+    def test_state(self):
+        self.assertEqual(State.name, '')
 
 if __name__ == '__main__':
     unittest.main
