@@ -26,10 +26,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """ test of to_dict method """
-        self.base = BaseModel()
-        dic = self.base.to_dict()
-        self.assertEqual(dict, type(dic))
-        self.assertIsNotNone(self.base.to_dict())
+        obj_dict = {'id': BaseModel.id, 'created_at': BaseModel.created_at, 'updated_at': BaseModel.updated_at}
+        self.assertEqual(BaseModel.__dict__, obj_dict)
 
     def test__str__(self):
         """ test of __str__ """
@@ -37,8 +35,9 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         """ Test of save """
-        with open(FileStorage._FileStorage__file_path, 'r') as f:
-            self.assertEqual(dict, type(json.load(f)))
+        BaseModel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(BaseModel.id, f.read())
 
     if __name__ == '__main__':
         unittest.main()
