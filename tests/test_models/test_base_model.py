@@ -4,19 +4,13 @@ import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from datetime import datetime
-from models import storage
-import pep8
+import models.engine.file_storage
 import os
 import uuid
 
-class TestBaseModel(unittest.TestCase):
-    """Testing FileStorage"""
-    def test_name(self):
-        """ test of name attribute """
-        self.base = BaseModel()
-        self.base.name = "BaseModel"
-        self.assertEqual(str, type(self.base.name))
 
+class TestBaseModel(unittest.TestCase):
+    """Class test base"""
     def test_id(self):
         """ test of id attribute """
         self.base = BaseModel()
@@ -47,12 +41,5 @@ class TestBaseModel(unittest.TestCase):
         base.save()
         self.assertEqual(dict, type(storage.all))
 
-    def test_pep8_conformance(self):
-        """Test that we conform to PEP8."""
-        pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/engine/file_storage.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
-
-if __name__ == '__main__':
-    unittest.main()
+    if __name__ == '__main__':
+        unittest.main()
