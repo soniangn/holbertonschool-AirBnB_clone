@@ -131,6 +131,25 @@ d0ef8146-4664-4de5-8e89-096d667b728e
 |[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)|  | 
 |[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)|  | 
 </details>
+
+<h2> Testing :</h2>
+All files have been tested with unit tests:
+
+The tests can be tested all in once with this command: `python3 -m unittest discover tests`.
+
+You can also test file by file by using this command: `python3 -m unittest tests/test_models/test_base_model.py`
+
+|  Tests Repository            | Name                         | Description           |
+|  --------------|---------------|------------------------------------------ |
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Amenity  | Checks amenity's attributes and that is a subclass of BaseModel |
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test BaseModel | Checks BaseModel methods
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test FileStorage | Checks the creation of file.json and all methods
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test City | Checks City's attributes and that is a subclass of BaseModel |
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Place  | Checks Place's attributes and that is a subclass of BaseModel |
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Review | Checks Review's attributes and that is a subclass of BaseModel |
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test State | Checks State's attributes and that is a subclass of BaseModel |
+|[models](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test User | Checks User's attributes and that is a subclass of BaseModel |
+
 <br><br>
 <h3>Authors :
     <a href="https://www.linkedin.com/in/nguyensonia/">
