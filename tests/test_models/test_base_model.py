@@ -25,6 +25,15 @@ class TestBaseModel(unittest.TestCase):
     def test_exist(self):
         self.assertTrue(os.path.exists("file.json"))
 
+    """Test of save"""
+    def test_safe(self):
+        base = BaseModel()
+        try:
+            os.remove("file.json")
+        except Exception:
+            pass
+        base.save()
+
 
 
 if __name__ == '__main__':
