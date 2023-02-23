@@ -9,20 +9,21 @@ import os
 class TestBaseModel(unittest.TestCase):
     """Class test base"""
 
-    """Test of Base() for assigning automatically an ID exists"""
-    def test_id(self):
-        base = BaseModel()
-        self.assertEqual(base.id, 1)
+    def setUp(self):
+        """ creates an instance of User with attributes """
+        self.base = BaseModel()
+        self.base.name = "baseModel"
 
-    """Test of Base(89) saving the ID passed exists"""
-    def test_id_pass(self):
-        my_number = BaseModel(89)
-        self.assertEqual(my_number, 89)
+    @classmethod
+    def tearDownClass(cls):
+        """ deletes json file at the end of tests """
+        try:
+            os.remove("file.json")
+        except Exception:
+            pass
 
-    """Base.from_json_string"""
-    """All test validate from Json string"""
-    def test_exist(self):
-        self.assertTrue(os.path.exists("file.json"))
+    def test_name(self):
+        self.assertEqual(str, type(self.base.name))
 
     """Test of save"""
     def save(self):

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Test class base"""
+""" File Storage Unit tests """
 
 import unittest
 from models.base_model import BaseModel
@@ -21,25 +21,28 @@ class TestFileStorage(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """ delete json file at the end of tests """
+        """ deletes json file at the end of tests """
         try:
             os.remove("file.json")
         except Exception:
             pass
 
-    """Test of __file_path:"""
     def test_file_path(self):
+        """ Test of __file_path """
         storage = FileStorage()
         self.assertEqual(storage._FileStorage__file_path, "file.json")
 
     def test_all(self):
-        """Test of all()"""
+        """ Test of all method """
         storage = FileStorage()
         all_obj = storage.all()
         self.assertIs(all_obj, storage._FileStorage__objects)
 
     def test_new(self):
-        """Test of new()"""
+        """ Test of new method """
+        storage = FileStorage()
+        obj = storage.new()
+        self.assert
 
 
 
