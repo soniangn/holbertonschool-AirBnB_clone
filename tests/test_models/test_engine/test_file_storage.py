@@ -1,54 +1,38 @@
 #!/usr/bin/python3
-""" File Storage Unit tests """
-
-import unittest
-from models.base_model import BaseModel
-from models.user import User
 from models.engine.file_storage import FileStorage
+from models import storage
+from models.base_model import BaseModel
+import models
+import unittest
+import json
 
 
 class TestFileStorage(unittest.TestCase):
-    """Class test FileStorage"""
 
-    def setUp(self):
-        """ creates an instance of User with attributes """
-        self.user = User()
-
-    @classmethod
-    def tearDownClass(cls):
-        """ deletes json file at the end of tests """
-        try:
-            os.remove("file.json")
-        except Exception:
-            pass
-
-    def test_file_path(self):
-        """ Test of __file_path """
-        storage = FileStorage()
-        self.assertEqual(storage._FileStorage__file_path, "file.json")
-
-    def test_all(self):
-        """ Test of all method """
-        storage = FileStorage()
-        all_obj = storage.all()
-        self.assertIs(all_obj, storage._FileStorage__objects)
-
-    """Test of save()"""
-    def test_save(self):
-        storage = FileStorage()
-        self.user = User()
-        storage.save()
-        self.assertEqual(storage._FileStorage__file_path, "file.json")
-
-    """Test of reload()"""
-    def test_reload(self):
-        with self.assertRaises(TypeError):
-            FileStorage.reload(None)
+    def test__file_path(self):
+        obj = FileStorage()
+        self.assertEqual(obj._FileStorage__file_path, "file.json")
 
     def test_objects(self):
-        self.assertEqual(dict, type(FileStorage._FileStorage__objects))"""
+        self.assertEqual(dict, type(FileStorage._FileStorage__objects))
 
+    def test_reload(self):
+        with self.assertRaises(TypeError):
+            storage.reload(None)
+
+    def test_all(self):
+        self.assertEqual(FileStorage._FileStorage__objects, storage.all())
+
+    def test_save(self):
+        with open(FileStorage._FileStorage__file_path, 'r') as f:
+            self.assertEqual(dict, type(json.load(f)))
+
+    def test_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
 if __name__ == '__main__':
     unittest.main()
-

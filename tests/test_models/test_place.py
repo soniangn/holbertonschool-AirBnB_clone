@@ -8,34 +8,19 @@ import os
 
 class TestPlace(unittest.TestCase):
     """ test Place """
-    def setUp(self):
-        """ creates an instance of Place with attributes """
-        self.place = Place()
-        self.place.city_id = "31000"
-        self.place.user_id = "Charlie_6542"
-        self.place.name = "chalet"
-        self.place.description = "7 pièces"
-        self.place.number_rooms = 4
-        self.place.number_bathrooms = 2
-        self.place.max_guest = 10
-        self.place.price_by_night = 450
-        self.place.latitude = 43.600000
-        self.place.longitude = 1.433333
-        self.place.amenity_ids = "amenities"
-
     def test_place(self):
         """ checks place's attribute """
-        self.assertEqual(self.place.city_id, "31000")
-        self.assertEqual(self.place.user_id, "Charlie_6542")
-        self.assertEqual(self.place.name, "chalet")
-        self.assertEqual(self.place.description, "7 pièces")
-        self.assertEqual(self.place.number_rooms, 4)
-        self.assertEqual(self.place.number_bathrooms, 2)
-        self.assertEqual(self.place.max_guest, 10)
-        self.assertEqual(self.place.price_by_night, 450)
-        self.assertEqual(self.place.latitude, 43.600000)
-        self.assertEqual(self.place.longitude, 1.433333)
-        self.assertEqual(self.place.amenity_ids, "amenities")
+        self.assertEqual(Place.city_id, "")
+        self.assertEqual(Place.user_id, "")
+        self.assertEqual(Place.name, "")
+        self.assertEqual(Place.description, "")
+        self.assertEqual(Place.number_rooms, 0)
+        self.assertEqual(Place.number_bathrooms, 0)
+        self.assertEqual(Place.max_guest, 0)
+        self.assertEqual(Place.price_by_night, 0)
+        self.assertEqual(Place.latitude, 0.0)
+        self.assertEqual(Place.longitude, 0.0)
+        self.assertEqual(Place.amenity_ids, [])
 
 if __name__ == '__main__':
     unittest.main
