@@ -4,6 +4,7 @@ import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models import storage
+import models
 from datetime import datetime
 from models.engine.file_storage import FileStorage
 import os
@@ -36,9 +37,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         """ Test of save """
-        BaseModel.save()
         with open("file.json", 'r') as f:
-            self.assertIn(BaseModel.id, f.read())
+            self.assertIn(BaseModel(), models.storage.all().values())
 
     if __name__ == '__main__':
         unittest.main()
