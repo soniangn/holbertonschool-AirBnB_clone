@@ -25,21 +25,17 @@ class TestFileStorage(unittest.TestCase):
 
     def test_file_path(self):
         """ Test of __file_path """
-        storage = FileStorage()
-        self.assertEqual(storage._FileStorage__file_path, "file.json")
+        self.assertEqual(FileStorage._FileStorage__file_path, "file.json")
 
     def test_all(self):
         """ Test of all method """
-        storage = FileStorage()
-        all_obj = storage.all()
-        self.assertIs(all_obj, storage._FileStorage__objects)
+        self.assertIs(FileStorage.all, FileStorage._FileStorage__objects)
 
     """Test of save()"""
     def test_save(self):
-        storage = FileStorage()
         self.user = User()
-        storage.save()
-        self.assertEqual(storage._FileStorage__file_path, "file.json")
+        FileStorage.save()
+        self.assertEqual(FileStorage._FileStorage__file_path, "file.json")
 
     """Test of reload()"""
     def test_reload(self):
