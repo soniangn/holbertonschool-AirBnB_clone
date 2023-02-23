@@ -12,9 +12,10 @@ class TestState(unittest.TestCase):
 
     def test_state(self):
         """ checks state's attribute """
-        State.name = "Haute-Garonne"
-        self.assertEqual(State.name, "Haute-Garonne")
         self.assertEqual(True, issubclass(State, BaseModel))
+        self.assertEqual(State.number_rooms, 0)
+        self.assertEqual(State.number_bathrooms, 0)
+        self.assertEqual(State.max_guest, 0)
 
 
 if __name__ == '__main__':
