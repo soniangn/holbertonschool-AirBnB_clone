@@ -3,6 +3,7 @@
 import unittest
 from models.base_model import BaseModel
 from datetime import datetime
+from models import storage
 import os
 import uuid
 
@@ -43,8 +44,8 @@ class TestBaseModel(unittest.TestCase):
 
     def save(self):
         """ Test of save """
-        base = BaseModel()
-        base.save()
+        self.base = BaseModel()
+        self.base.save()
         self.assertIsNotNone(self.base.save())
 
 if __name__ == '__main__':
