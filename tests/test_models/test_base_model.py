@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Test class base"""
 import unittest
+from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from datetime import datetime
 from models import storage
@@ -9,11 +10,7 @@ import os
 import uuid
 
 class TestBaseModel(unittest.TestCase):
-    """Class test base"""
-
-    def setUp(self):
-        """ creates an instance of BaseModel """
-
+    """Testing FileStorage"""
     def test_name(self):
         """ test of name attribute """
         self.base = BaseModel()
