@@ -44,9 +44,8 @@ class TestBaseModel(unittest.TestCase):
 
     def save(self):
         """ Test of save """
-        self.base = BaseModel()
-        self.base.save()
-        self.assertIsNotNone(self.base.save())
+        BaseModel.save()
+        self.assertEqual(dict, type(storage.all))
 
 if __name__ == '__main__':
     unittest.main()
