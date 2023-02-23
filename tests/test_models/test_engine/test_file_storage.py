@@ -31,8 +31,3 @@ class TestFileStorage(unittest.TestCase):
         """Test of save"""
         with open(FileStorage._FileStorage__file_path, 'r') as f:
             self.assertEqual(dict, type(json.load(f)))
-
-
-if __name__ == '__main__':
-    unittest.main()
-
