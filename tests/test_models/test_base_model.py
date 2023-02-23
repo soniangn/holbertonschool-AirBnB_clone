@@ -26,10 +26,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(os.path.exists("file.json"))
 
     """Test of save"""
-    def test_safe(self):
-        model = BaseModel()
-        self.model.save()
-
+    def test_save(self):
+        """Tests the save method"""
+        obj = BaseModel()
+        test1 = obj.created_at
+        test2 = obj.updated_at
+        obj.save()
+        self.assertEqual(test1, obj.created_at)
+        self.assertNotEqual(test2, obj.updated_at)
 
 
 if __name__ == '__main__':
