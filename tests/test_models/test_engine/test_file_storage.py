@@ -46,7 +46,7 @@ class TestFileStorage(unittest.TestCase):
             FileStorage.reload(None)
 
     def test_objects(self):
-        self.assertEqual(dict, type(FileStorage._FileStorage__objects))"""
+        self.assertEqual(dict, type(FileStorage._FileStorage__objects))
 
 
 if __name__ == '__main__':
