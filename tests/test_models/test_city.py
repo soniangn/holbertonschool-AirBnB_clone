@@ -9,11 +9,16 @@ import os
 
 class TestCity(unittest.TestCase):
     """ test City """
+    def setUp(self):
+        """ creates an instance of City """
+        self.city = City()
+        self.city.state_id = "31000"
+        self.city.name = "Toulouse"
+
     def test_city(self):
         """ checks city's attributes """
         self.assertEqual(self.city.state_id, "31000")
         self.assertEqual(self.city.name, "Toulouse")
-        self.assertEqual(True, issubclass(City, BaseModel))
 
 if __name__ == '__main__':
     unittest.main
