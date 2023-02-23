@@ -2,23 +2,24 @@
 """
 Unit tests for Base class
 """
-
-
 import unittest
 from models import storage
 import pep8
 from models.base_model import BaseModel
-
+from models.engine.file_storage import FileStorage
 
 class Test_Base(unittest.TestCase):
     """Base class tests"""
 
     def test_1(self):
         """  Test Dictionary """
-        model = BaseModel()
-        model.save()
-        new_object = storage.all()
-        self.assertEqual(dict, type(new_object))
+        BaseModel.save()
+        self.assertEqual(dict, type(storage.all))
+
+    def test_reload(self):
+        """Test of reload()"""
+        with self.assertRaises(TypeError):
+            FileStorage.reload(None)
 
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
