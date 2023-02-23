@@ -34,8 +34,8 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         """ test of to_dict method """
         self.base = BaseModel()
-        self.base.to_dict()
-        self.assertEqual(dict, type(self.base.to_dict()))
+        dic = self.base.to_dict()
+        self.assertEqual(dict, type(dic))
 
     def test__str__(self):
         """ test of __str__ """
