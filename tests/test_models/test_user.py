@@ -5,6 +5,8 @@ from models.base_model import BaseModel
 from models.user import User
 import os
 
+#!/usr/bin/python3
+"""Test cases for User Class"""
 
 class TestUser(unittest.TestCase):
     """ test User """
@@ -26,10 +28,10 @@ class TestUser(unittest.TestCase):
 
     def test_user(self):
         """ checks user's attributes """
-        self.assertEqual(self.user.first_name, "Vanessa")
-        self.assertEqual(self.user.last_name, "Tessier")
-        self.assertEqual(self.user.password, "sTr@n_G")
-        self.assertEqual(self.user.email, "vt@mail.com")
+        self.assertEqual(str, type(self.user.first_name), "Vanessa")
+        self.assertEqual(str, type(self.user.last_name), "Tessier")
+        self.assertEqual(str, type(self.user.password), "sTr@n_G")
+        self.assertEqual(str, type(self.user.email), "vt@mail.com")
 
 
 if __name__ == '__main__':
