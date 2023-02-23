@@ -8,17 +8,18 @@ import unittest
 from models import storage
 import pep8
 from models.base_model import BaseModel
+from models import FileStorage
 
 
 class Test_Base(unittest.TestCase):
     """Base class tests"""
 
-    def test_1(self):
-        """  Test Dictionary """
-        model = BaseModel()
-        model.save()
-        new_object = storage.all()
-        self.assertEqual(dict, type(new_object))
+
+    def test_filestorage(self):
+        storage = FileStorage()
+        storage.all().clear()
+        storage.reload()
+        self.assertFalse(len(storage.all()) == 0)
 
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
