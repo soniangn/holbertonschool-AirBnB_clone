@@ -4,9 +4,10 @@ import unittest
 from models.base_model import BaseModel
 from models import storage
 from datetime import datetime
-import models.engine.file_storage
+from models.engine.file_storage import FileStorage
 import os
 import uuid
+import json
 
 
 class TestBaseModel(unittest.TestCase):
@@ -36,11 +37,10 @@ class TestBaseModel(unittest.TestCase):
         obj = self.base.__str__()
         self.assertEqual(str, type(obj))
 
-    def save(self):
+    def test_save(self):
         """ Test of save """
-        base = BaseModel()
-        base.save()
-        self.assertEqual(dict, type(storage.all))
+        with open(FileStorage._FileStorage__file_path, 'r') as f:
+            self.assertEqual(dict, type(json.load(f)))
 
     if __name__ == '__main__':
         unittest.main()
