@@ -38,17 +38,9 @@ class TestFileStorage(unittest.TestCase):
         all_obj = storage.all()
         self.assertIs(all_obj, storage._FileStorage__objects)
 
-    def test_new(self):
-        """ Test of new method """
-        storage = FileStorage()
-        obj = storage.new()
-        self.assert
-
-
-
     """Test of save()"""
-    def test_safe(self):
-        FileStorage.safe()
+    def test_save(self):
+        FileStorage.save()
 
     """Test of reload()"""
     """def test_reload(self):
