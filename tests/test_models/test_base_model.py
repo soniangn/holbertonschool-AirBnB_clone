@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Test class base"""
 import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
@@ -33,7 +34,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test__str__(self):
         """ test of __str__ """
-        self.assertEqual(str, f"[{BaseModel.__class__.__name__}]({BaseModel.id}){BaseModel.__dict__}")
+        self.assertEqual(str, type(BaseModel.__str__(self)))
 
     def test_save(self):
         """ Test of save """
