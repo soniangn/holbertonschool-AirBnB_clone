@@ -11,12 +11,8 @@ class TestCity(unittest.TestCase):
 
     def test_city(self):
         """ creates an instance of City """
-        self.city = City()
-        self.city.state_id = "31000"
-        self.city.name = "Toulouse"
-        """ checks city's attributes """
-        self.assertEqual(self.city.state_id, "31000")
-        self.assertEqual(self.city.name, "Toulouse")
+        self.assertEqual(City.state_id, "")
+        self.assertEqual(City.name, "")
 
 if __name__ == '__main__':
     unittest.main
