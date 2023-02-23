@@ -20,7 +20,7 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(Place.price_by_night, 0)
         self.assertEqual(Place.latitude, 0.0)
         self.assertEqual(Place.longitude, 0.0)
-        self.assertEqual(Place.amenity_ids, "")
+        self.assertEqual(Place.amenity_ids, [])
 
 if __name__ == '__main__':
     unittest.main
