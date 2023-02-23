@@ -12,8 +12,7 @@ import json
 
 class TestFileStorage(unittest.TestCase):
     """Class test FileStorage"""
-
-    def test_file_path(self):
+    def test__file_path(self):
         """ Test of __file_path """
         self.assertEqual(FileStorage._FileStorage__file_path, "file.json")
 
@@ -21,12 +20,16 @@ class TestFileStorage(unittest.TestCase):
         """ Test of all method """
         self.assertIs(FileStorage._FileStorage__objects, storage.all)
 
+    def test_objects(self):
+        self.assertEqual(dict, type(FileStorage._FileStorage__objects))
+
     def test_reload(self):
         """Test of reload()"""
         with self.assertRaises(TypeError):
-            FileStorage.reload(None)
+            storage.reload(None)
 
-    def test_safe(self):
+    def test_save(self):
+        """Test of save"""
         with open(FileStorage._FileStorage__file_path, 'r') as f:
             self.assertEqual(dict, type(json.load(f)))
 
