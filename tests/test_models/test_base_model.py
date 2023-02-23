@@ -4,6 +4,7 @@ import unittest
 from models.base_model import BaseModel
 from datetime import datetime
 from models import storage
+import pep8
 import os
 import uuid
 
@@ -34,8 +35,9 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         """ test of to_dict method """
         self.base = BaseModel()
-        self.base.to_dict()
-        self.assertEqual(dict, type(self.base.to_dict()))
+        dic = self.base.to_dict()
+        self.assertEqual(dict, type(dic))
+        self.assertIsNotNone(self.base.to_dict())
 
     def test__str__(self):
         """ test of __str__ """
@@ -44,8 +46,16 @@ class TestBaseModel(unittest.TestCase):
 
     def save(self):
         """ Test of save """
-        BaseModel.save()
+        base = BaseModel()
+        base.save()
         self.assertEqual(dict, type(storage.all))
+
+    def test_pep8_conformance(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/engine/file_storage.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
 if __name__ == '__main__':
     unittest.main()
