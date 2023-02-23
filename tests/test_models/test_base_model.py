@@ -25,10 +25,11 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(os.path.exists("file.json"))
 
     """Test of save"""
-    def save(self, obj=None):
-        """ DOC
-        """
-        pass
+    def save(self):
+        base = BaseModel
+        base.save()
+        base.storage.new(self)
+
 
 if __name__ == '__main__':
     unittest.main()
