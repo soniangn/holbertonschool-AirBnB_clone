@@ -14,9 +14,6 @@ class TestState(unittest.TestCase):
         """ checks state's attribute """
         State.name = "Haute-Garonne"
         self.assertEqual(State.name, "Haute-Garonne")
-
-    def test_subclass(self):
-        """ checks if State is a subclass of BaseModel """
         self.assertEqual(True, issubclass(State, BaseModel))
 
 
