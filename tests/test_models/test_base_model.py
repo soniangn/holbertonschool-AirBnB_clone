@@ -37,8 +37,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         """ Test of save """
-        with open("file.json", 'r') as f:
-            self.assertIn(BaseModel(), models.storage.all().values())
+        self.assertIn(BaseModel(), models.storage.all().values())
         BaseModel.save()
         self.assertNotEqual(BaseModel.updated_at, BaseModel.created_at)
 
