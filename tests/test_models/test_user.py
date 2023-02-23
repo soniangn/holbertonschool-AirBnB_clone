@@ -10,6 +10,13 @@ import os
 
 class TestUser(unittest.TestCase):
     """ test User """
+    def setUp(self):
+        """ creates an instance of User with attributes """
+        self.user = User()
+        self.user.first_name = "Vanessa"
+        self.user.last_name = "Tessier"
+        self.user.password = "sTr@n_G"
+        self.user.email = "vt@mail.com"
 
     def test_user(self):
         """ checks user's attributes """
