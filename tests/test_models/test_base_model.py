@@ -3,23 +3,13 @@
 import unittest
 from models.base_model import BaseModel
 from datetime import datetime
-from models import storage
-import pep8
+import models.engine.file_storage
 import os
 import uuid
 
+
 class TestBaseModel(unittest.TestCase):
     """Class test base"""
-
-    def setUp(self):
-        """ creates an instance of BaseModel """
-
-    def test_name(self):
-        """ test of name attribute """
-        self.base = BaseModel()
-        self.base.name = "BaseModel"
-        self.assertEqual(str, type(self.base.name))
-
     def test_id(self):
         """ test of id attribute """
         self.base = BaseModel()
@@ -51,4 +41,4 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(dict, type(storage.all))
 
     if __name__ == '__main__':
-    unittest.main()
+        unittest.main()
