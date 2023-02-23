@@ -28,8 +28,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """ test of to_dict method """
-        obj_dict = {'id': BaseModel.id, 'created_at': BaseModel.created_at, 'updated_at': BaseModel.updated_at}
-        self.assertEqual(BaseModel.__dict__, obj_dict)
+        self.assertEqual(BaseModel.__dict__, {'id': BaseModel.id, 'created_at': BaseModel.created_at, 'updated_at': BaseModel.updated_at})
 
     def test__str__(self):
         """ test of __str__ """
