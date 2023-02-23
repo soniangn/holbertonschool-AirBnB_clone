@@ -13,11 +13,6 @@ class TestFileStorage(unittest.TestCase):
     def setUp(self):
         """ creates an instance of User with attributes """
         self.user = User()
-        self.user.first_name = "Vanessa"
-        self.user.last_name = "Tessier"
-        self.user.password = "sTr@n_G"
-        self.user.email = "vt@mail.com"
-        self.storage = FileStorage()
 
     @classmethod
     def tearDownClass(cls):
@@ -40,7 +35,8 @@ class TestFileStorage(unittest.TestCase):
 
     """Test of save()"""
     def test_save(self):
-        FileStorage.save()
+        storage = FileStorage()
+        storage.save()
 
     """Test of reload()"""
     """def test_reload(self):
