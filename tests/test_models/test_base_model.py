@@ -26,7 +26,7 @@ class TestBaseModel(unittest.TestCase):
 
     """Test of save"""
     def save(self):
-        base = BaseModel
+        base = BaseModel()
         base.save()
         base.storage.new(self)
 
