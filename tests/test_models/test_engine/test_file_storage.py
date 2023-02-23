@@ -5,23 +5,13 @@ import unittest
 from models.base_model import BaseModel
 from models.user import User
 from models.engine.file_storage import FileStorage
+from models import storage
 import os
+import json
 
 
 class TestFileStorage(unittest.TestCase):
     """Class test FileStorage"""
-
-    def setUp(self):
-        """ creates an instance of User with attributes """
-        self.user = User()
-
-    @classmethod
-    def tearDownClass(cls):
-        """ deletes json file at the end of tests """
-        try:
-            os.remove("file.json")
-        except Exception:
-            pass
 
     def test_file_path(self):
         """ Test of __file_path """
@@ -29,21 +19,16 @@ class TestFileStorage(unittest.TestCase):
 
     def test_all(self):
         """ Test of all method """
-        self.assertIs(FileStorage.all, FileStorage._FileStorage__objects)
+        self.assertIs(FileStorage._FileStorage__objects, storage.all)
 
-    """Test of save()"""
-    def test_save(self):
-        self.user = User()
-        FileStorage.save()
-        self.assertEqual(FileStorage._FileStorage__file_path, "file.json")
-
-    """Test of reload()"""
     def test_reload(self):
+        """Test of reload()"""
         with self.assertRaises(TypeError):
             FileStorage.reload(None)
 
-    def test_objects(self):
-        self.assertEqual(dict, type(FileStorage._FileStorage__objects))
+    def test_safe(self):
+        with open(FileStorage._FileStorage__file_path, 'r') as f:
+            self.assertEqual(dict, type(json.load(f)))
 
 
 if __name__ == '__main__':
