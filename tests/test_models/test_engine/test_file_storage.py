@@ -10,21 +10,24 @@ import json
 
 
 class TestFileStorage(unittest.TestCase):
-
+    """Class test FileStorage"""
     def test__file_path(self):
-        obj = FileStorage()
-        self.assertEqual(obj._FileStorage__file_path, "file.json")
+        """ Test of __file_path """
+        self.assertEqual(FileStorage._FileStorage__file_path, "file.json")
+
+    def test_all(self):
+        """ Test of all method """
+        self.assertIs(FileStorage._FileStorage__objects, FileStorage.all)
 
     def test_objects(self):
         self.assertEqual(dict, type(FileStorage._FileStorage__objects))
 
     def test_reload(self):
+        """Test of reload()"""
         with self.assertRaises(TypeError):
-            storage.reload(None)
-
-    def test_all(self):
-        self.assertEqual(FileStorage._FileStorage__objects, storage.all())
+            FileStorage.reload(None)
 
     def test_save(self):
+        """Test of save"""
         with open(FileStorage._FileStorage__file_path, 'r') as f:
             self.assertEqual(dict, type(json.load(f)))
