@@ -34,9 +34,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test__str__(self):
         """ test of __str__ """
-        self.base = BaseModel()
-        obj = self.base.__str__()
-        self.assertEqual(str, type(obj))
+        self.assertEqual(str, type(BaseModel.__str__))
 
     def test_save(self):
         """ Test of save """
