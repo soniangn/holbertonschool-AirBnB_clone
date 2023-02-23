@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Test class base"""
 import unittest
-from models.base_model import Base
+from models.base_model import BaseModel
 
 class testbase(unittest.TestCase):
     """Class test base"""
@@ -11,10 +11,12 @@ class testbase(unittest.TestCase):
     def test_id(self):
         base = Base()
         self.assertEqual(base.id, 1)
+
     """Test of Base(89) saving the ID passed exists"""
     def test_id_pass(self):
         base = Base(89)
         self.assertEqual(base.id, 89)
+
     """Test of Base.to_json"""
     """All test validate from base.to_json"""
     def test_none(self):
