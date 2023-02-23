@@ -35,13 +35,13 @@ class TestBaseModel(unittest.TestCase):
 
     def test__str__(self):
         """ test of __str__ """
+        self.assertEqual(str, type(self.__str__()))
 
-
-    """Test of save"""
     def save(self):
+        """ Test of save """
         base = BaseModel()
         base.save()
-        base.storage.new(self)
+        self.assertIsNotNone(self.base.save())
 
 if __name__ == '__main__':
     unittest.main()
