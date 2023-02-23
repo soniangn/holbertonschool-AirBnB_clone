@@ -36,10 +36,12 @@ class TestFileStorage(unittest.TestCase):
     """Test of save()"""
     def test_save(self):
         storage = FileStorage()
+        self.user = User()
         storage.save()
+        self.assertEqual(storage._FileStorage__file_path, "file.json")
 
     """Test of reload()"""
-    """def test_reload(self):
+    def test_reload(self):
         with self.assertRaises(TypeError):
             FileStorage.reload(None)
 
