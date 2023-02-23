@@ -41,11 +41,11 @@ class TestFileStorage(unittest.TestCase):
     def test_new(self):
         """Test of new()"""
 
-    
+
 
     """Test of save()"""
-    """def test_safe(self):
-        FileStorage.safe()"""
+    def test_safe(self):
+        FileStorage.safe()
 
     """Test of reload()"""
     """def test_reload(self):
