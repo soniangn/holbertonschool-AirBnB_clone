@@ -11,8 +11,7 @@ class TestState(unittest.TestCase):
     """ test State """
     def setUp(self):
         """ creates an instance of State with attributes """
-        self.state = State()
-        self.state.name = "Haute-Garonne"
+        State.name = "Haute-Garonne"
 
     @classmethod
     def tearDownClass(cls):
@@ -22,9 +21,9 @@ class TestState(unittest.TestCase):
         except Exception:
             pass
 
-    def test_user(self):
+    def test_state(self):
         """ checks state's attribute """
-        self.assertEqual(self.state.name, "Haute-Garonne")
+        self.assertEqual(State.name, "Haute-Garonne")
 
     def test_subclass(self):
         """ checks if State is a subclass of BaseModel """
