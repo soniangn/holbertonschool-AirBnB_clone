@@ -6,7 +6,6 @@ import pep8
 import unittest
 import json
 
-
 class TestFileStorage(unittest.TestCase):
 
     def test__file_path(self):
