@@ -136,14 +136,14 @@ You can also test file by file by using this command: `python3 -m unittest tests
 
 |  Tests Repository            | Name                         | Description           |
 |  --------------|---------------|------------------------------------------ |
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Amenity  | Checks amenity's attributes and that is a subclass of BaseModel |
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test BaseModel | Checks BaseModel methods
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test FileStorage | Checks the creation of file.json and all methods
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test City | Checks City's attributes and that is a subclass of BaseModel |
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Place  | Checks Place's attributes and that is a subclass of BaseModel |
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Review | Checks Review's attributes and that is a subclass of BaseModel |
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test State | Checks State's attributes and that is a subclass of BaseModel |
-|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test User | Checks User's attributes and that is a subclass of BaseModel |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Amenity  | Checks amenity's attributes |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test BaseModel | Checks BaseModel methods |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test FileStorage | Checks the creation of file.json and all methods |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test City | Checks City's attributes |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Place  | Checks Place's attributes |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test Review | Checks Review's attributes |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test State | Checks State's attributes |
+|[tests](https://github.com/TessierV/holbertonschool-AirBnB_clone/tree/main/tests)| Test User | Checks User's attributes |
 
 
 <h3>Authors :
