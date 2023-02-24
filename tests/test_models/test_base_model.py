@@ -38,8 +38,9 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         """ Test of save """
-        self.assertIn(BaseModel(), models.storage.all().values())
-        BaseModel.save(self)
+        BaseModel.save()
+        with open("file.json", 'r') as f:
+            self.assertIn(BaseModel.id, f.read())
 
 
     if __name__ == '__main__':
