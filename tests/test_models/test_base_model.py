@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Test class base"""
+""" Module for BaseModel unit tests """
 import unittest
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
@@ -12,7 +12,7 @@ import json
 
 
 class TestBaseModel(unittest.TestCase):
-    """Class test base"""
+    """Class test BaseModel"""
     def test_id(self):
         """ test of id attribute """
         self.base = BaseModel()
@@ -36,14 +36,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(str, type(BaseModel.__str__(self)))
 
     def test_save_check_time(self):
-        """ Test of save """
+        """ Tests that save method updates the time """
         self.base = BaseModel()
         self.base.name = "My_Model"
         self.base.save()
         self.assertNotEqual(self.base.created_at, self.base.updated_at)
 
     def test_save_check_file(self):
-        """ Test of save """
+        """ Tests that save method saves contents """
         self.base = BaseModel()
         self.base.name = 'My_Model'
         self.base.save()
@@ -51,5 +51,5 @@ class TestBaseModel(unittest.TestCase):
             read_data = f.read()
             self.assertIn(self.base.name, read_data)
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
