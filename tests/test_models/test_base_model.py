@@ -40,7 +40,7 @@ class TestBaseModel(unittest.TestCase):
         """ Test of save """
         BaseModel.save(self)
         with open("file.json", 'r') as f:
-            self.assertIn(BaseModel.id, f.read())
+            self.assertIn(BaseModel, f.read())
 
 
     if __name__ == '__main__':
