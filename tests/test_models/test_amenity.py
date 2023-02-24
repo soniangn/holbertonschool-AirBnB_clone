@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""Review"""
-""" Unittest for Amenity """
+""" Modules for Amenity unit tests"""
 import unittest
 from models.base_model import BaseModel
 from models.amenity import Amenity
 
 
 class TestAmenity(unittest.TestCase):
-    """ test Amenity """
+    """ tests Amenity """
     def test_city(self):
-        """ checks city's attributes """
+        """ checks Amenity's attributes """
         self.assertEqual(Amenity.name, "")
 
 
