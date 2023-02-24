@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Review"""
-""" Unittest for Review """
+""" Module for Review unit tests """
 import unittest
 from models.base_model import BaseModel
 from models.review import Review
