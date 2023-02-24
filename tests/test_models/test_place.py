@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Unittest for Place """
+""" Module for Place unit tests """
 import unittest
 from models.base_model import BaseModel
 from models.place import Place
@@ -9,7 +9,7 @@ import os
 class TestPlace(unittest.TestCase):
     """ test Place """
     def test_place(self):
-        """ checks place's attribute """
+        """ checks Place's attribute """
         self.assertEqual(Place.city_id, "")
         self.assertEqual(Place.user_id, "")
         self.assertEqual(Place.name, "")
