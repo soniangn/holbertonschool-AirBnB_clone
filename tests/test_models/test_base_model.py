@@ -38,7 +38,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         """ Test of save """
-        BaseModel.save()
+        BaseModel.save(self)
         with open("file.json", 'r') as f:
             self.assertIn(BaseModel.id, f.read())
 
