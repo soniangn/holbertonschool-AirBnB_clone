@@ -39,7 +39,7 @@ class TestBaseModel(unittest.TestCase):
     def test_save(self):
         """ Test of save """
         self.assertIn(BaseModel(), models.storage.all().values())
-        BaseModel.save()
+        BaseModel.save(self)
         self.assertNotEqual(BaseModel.updated_at, BaseModel.created_at)
 
 
