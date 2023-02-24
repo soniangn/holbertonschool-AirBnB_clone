@@ -35,13 +35,21 @@ class TestBaseModel(unittest.TestCase):
         """ test of __str__ """
         self.assertEqual(str, type(BaseModel.__str__(self)))
 
-    def test_save(self):
+    def test_save_check_time(self):
         """ Test of save """
         self.base = BaseModel()
         self.base.name = "My_Model"
         self.base.save()
         self.assertNotEqual(self.base.created_at, self.base.updated_at)
 
+    def test_save_check_file(self):
+        """ Test of save """
+        self.base = BaseModel()
+        self.base.name = 'My_Model'
+        self.base.save()
+        with open("file.json", "r", encoding='utf-8') as f:
+            read_data = f.read()
+            self.assertIn(self.base.name, read_data)
 
     if __name__ == '__main__':
         unittest.main()
