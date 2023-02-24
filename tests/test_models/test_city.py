@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Review"""
-""" Unittest for City """
+""" Unit tests for City """
 import unittest
 from models.base_model import BaseModel
 from models.city import City
@@ -8,9 +7,9 @@ import os
 
 
 class TestCity(unittest.TestCase):
-
+    """ tests City """
     def test_city(self):
-        """ creates an instance of City """
+        """ checks City's attributes """
         self.assertEqual(City.state_id, "")
         self.assertEqual(City.name, "")
 
