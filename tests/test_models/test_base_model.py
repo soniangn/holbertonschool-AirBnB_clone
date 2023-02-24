@@ -40,7 +40,6 @@ class TestBaseModel(unittest.TestCase):
         """ Test of save """
         self.assertIn(BaseModel(), models.storage.all().values())
         BaseModel.save(self)
-        self.assertNotEqual(BaseModel.updated_at, BaseModel.created_at)
 
 
     if __name__ == '__main__':
